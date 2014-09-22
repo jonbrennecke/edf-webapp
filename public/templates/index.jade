@@ -1,0 +1,32 @@
+extends proton/layout
+
+block head
+	link(href="css/stylesheets/main.css" type="text/css" rel="stylesheet")
+	link(href="bower_components/jqueryui/themes/base/all.css" type="text/css" rel="stylesheet")
+	script(src="bower_components/d3/d3.min.js")
+	script(src="scripts/proton.js")
+	script(src="scripts/figure.js")
+	script(src="scripts/main.js")
+
+block page
+	.header-box
+		h1.fa.fa-pie-chart 
+			span EDF Analysis Suite
+		h1.fa.fa-plus-square(data-action="open-file")
+			span Open
+	.figure-box
+		.figure-box--title-handle.ui-draggable.ui-resizable
+			a.fa.fa-info-circle(data-action="display-header")
+			h1.title.filename
+		.figure-box--info-menu.figure-box--content-box
+			.info-menu--header-fields
+				- a = ["version", "patientId", "recordId", "start", "end", "bytes", "nr", "duration", "ns", "labels", "transducer", "dimension", "physMin", "physMax", "digMin", "digMax", "prefiltering", "samples"];
+				- for (var i=0; i < a.length; i++ ) {
+					.field(class="#{a[i]}")
+						.label
+						.value
+				- }		
+		.figure-box--resize-handle.ui-resizable-handle
+			.fa.fa-arrows-h
+		.d3.figure.figure-box--content-box
+			svg.d3#lineplot

@@ -1,0 +1,221 @@
+@import "compass/reset";
+@import "compass/css3/images";
+@import "compass/css3/transform";
+@import "soop/class";
+@import "proton/base";
+
+@import url("http://fonts.googleapis.com/css?family=Inconsolata:100,300,400");
+
+$font: "Inconsolata", sans-serif;
+
+$blue: #5eb6c2;
+$yellow: #f2d36b;
+$red: #f65a49;
+$dark: darken($blue,30%);
+
+
+.page-wrap, .page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.page {
+	box-sizing: border-box;
+	
+	&:before {
+		@extend .proton--inherit-size;
+		content: '';
+		background: #333;
+	}
+}
+
+.header-box {
+	position: relative;
+	float: left;
+	box-sizing: border-box;
+	background: #fff;
+	width: 100%;
+	box-shadow: 0px 1px 3px rgba(#000,0.25);
+	border-bottom: 1px solid #000;
+	z-index: 100;
+
+	.fa, h1 {
+		float: left;
+	}
+
+	h1 {
+		span { 
+			display: block;
+			font-family: $font; 
+			padding: 1em;
+			float: left;
+		}
+
+		&:before {
+			float: left;
+			padding: 1em 0em 1em 1em;
+		}
+
+		&[data-action]:hover {
+			cursor: pointer;
+			color: #fff;
+			background: $blue;
+		}
+	}
+}
+
+.figure-box {
+	position: relative;
+	height: 30em;
+	box-shadow: 0px 0px 50px rgba(#000,0.5);
+	border: 1px solid #000;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 4em;
+
+	&:before {
+		@extend .proton--inherit-size;
+		content: '';
+		background: #222;
+	}
+}
+
+.figure-box--title-handle, .figure-box--content-box {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.figure-box--content-box {
+	height: calc(100% - 3em);
+}
+
+.figure-box--title-handle {
+	padding: 1em;
+	height: 3em;
+	@include background(linear-gradient(lighten(#fff,5%),#fff));
+	box-shadow: 0px 1px 3px rgba(#000,0.5);
+	cursor: pointer;
+	box-sizing: border-box;
+
+	a {
+		color: darken($blue,35%);
+		vertical-align: middle;
+		line-height: 1em;
+		cursor: pointer;
+		float: left;
+
+		&:active {
+			color: $red;
+		}
+
+		&:before {
+			font-size: 1.5em;
+		}
+	}
+
+	h1 {
+		padding-left: 1em;
+		display: block;
+		float: left;
+		font-family: $font;
+		color: $blue;
+	}
+}
+
+.figure-box--resize-handle {
+	$width: 3em;
+	font-size: 1em !important;
+	position: absolute;
+	z-index: 100;
+	right: -0.5*$width;
+	bottom: -0.5*$width;
+	width: $width;
+	height: $width;
+	background: #fff;
+	color: #222;
+	@include transform(rotate(45deg));
+	cursor: pointer;
+
+	.fa {
+		margin-top: 0.5*$width;
+		margin-left: 0.1em;
+		&:before {
+			display: block;
+			margin-top: -0.5em;
+			font-size: 1em;
+		}
+	}
+}
+
+.figure-box--info-menu {
+	display: none;
+	padding: 1em;
+
+	&.show {
+		display: block;
+	}
+
+	.field {
+		float: left;
+		width: 50%;
+		font-family: $font;
+		padding: 0.25em;
+		box-sizing: border-box;
+
+		.label, .value {
+			float: left;
+			color: rgba(#fff,0.5);
+			font-weight: 100;
+		}
+
+		.value {
+			padding-left: 1em;
+		}
+	}
+}
+
+.figure {
+	box-sizing: border-box;
+	padding: 2em;
+	transition: -webkit-filter 0.25s;
+
+	&.hidden {
+		-webkit-filter: blur(15px);
+	}
+}
+
+.axis {
+
+	path, line {
+		fill: none;
+		stroke: $blue;
+		shape-rendering: crispEdges;
+	}
+
+	text {
+		font-family: $font;
+		font-weight: lighter;
+		font-size: 10pt;
+		fill: $blue;
+	}
+}
+
+.line-plot {
+	fill: none;
+	stroke-width: 1;
+	stroke: rgba($blue,1);
+}
+
+.area-plot {
+	stroke-width: 0;
+	fill: rgba($blue,0.50);
+}
+
+.tick {
+	stroke-dasharray: 1, 2;
+}
+
+
