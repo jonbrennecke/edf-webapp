@@ -3,7 +3,7 @@
 	mod(
 		require('./scripts/schemas'),
 		require('./scripts/figure'),
-		require('./scripts/linalg')
+		require('node-linalg')
 	);
 
 }(function ( schemas, figurejs, linalg ) {

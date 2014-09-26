@@ -2,8 +2,8 @@
 
 	if ( typeof module === "object" && typeof module.exports === "object" ) { // CommonJS, Node 
 		module.exports = mod(
-			require(__dirname+'/edflib'),
-			require(__dirname+'/linalg'),
+			require('edflib'),
+			require('node-linalg'),
 			require(__dirname+'/figure'),
 			window.$
 		);
