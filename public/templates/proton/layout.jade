@@ -4,6 +4,8 @@
 //-
 //- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+include proton.jade
+
 //- global variables
 block vars
 
@@ -16,6 +18,9 @@ html(lang="en")
 		script(src="bower_components/jqueryui/jquery-ui.min.js")
 		block head
 	body
+		block hidden
+			input(style="display:none;" id="proton--openFileDialog" type="file")
+
 		block body
 		.page-wrap
 			.page

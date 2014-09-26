@@ -1,8 +1,9 @@
 @import "compass/reset";
 @import "compass/css3/images";
 @import "compass/css3/transform";
-@import "soop/class";
 @import "proton/base";
+// @import "proton/shapes";
+// @import "proton/loading-anims";
 
 @import url("http://fonts.googleapis.com/css?family=Inconsolata:100,300,400");
 
@@ -46,6 +47,8 @@ $dark: darken($blue,30%);
 	}
 
 	h1 {
+		display: block;
+
 		span { 
 			display: block;
 			font-family: $font; 
@@ -177,10 +180,116 @@ $dark: darken($blue,30%);
 	}
 }
 
+// TODO fix this crappy hack!
+// put both the content-box--tabs in an absolutely positioned container
+
+
+.magic-box {
+	top: 50%;
+}
+
+.settings-box {
+	top: 35%;
+}
+
+.content-box--tab {
+	position: absolute;
+	right: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background: #fff;
+	color: #222;
+	box-shadow: 0px 0px 3px rgba(#000,0.75);
+	border: 1px solid #000;
+	cursor: pointer;
+
+	.settings-menu { display: none; }
+
+	&:hover {
+		background: $blue;
+		color: #fff;
+	}
+
+	a.fa {
+		padding: 1em;
+		span { 
+			display: none; 
+			color: #fff; 
+			font-family: $font; 
+			float: left; }
+	}
+
+	&.extended {
+		padding: 0.25em;
+		background: $blue;
+		color: #fff;
+		z-index: 100;
+
+		a.fa {
+			&:before { float: left; }
+			span { display: block; padding-left: 1em; }
+		}
+
+		.settings-menu {
+			display: block;
+			width: 15em;
+			background: $blue;
+
+			.field {
+				float: left;
+				width: 100%;
+				padding: 1em;
+				background: #333;
+				box-sizing: border-box;
+				margin-bottom: 3px;
+				border-radius: 5px;
+
+				&.update {
+					@include proton--aqua-button($blue,#fff);
+					span { width: 100%; text-align: center; }
+				}
+			}
+
+			span {
+				float: left;
+				font-family: $font;
+				font-size: 12pt;
+				line-height: 1em;
+				vertical-align: middle;
+			}
+
+			input {
+				font-family: $font;
+				color: #fff;
+
+				@extend .proton--reset-input;
+				float: left;
+				padding-left: 1em;
+				width: 7em;
+
+				@include proton--placeholder {
+					color: #aaa;
+				}
+			}
+		}
+	}
+}
+
+
+
+// *********************************************************
+// *********************************************************
+// *********************** FIGURE **************************
+// *********************************************************
+// *********************************************************
+
+
+
 .figure {
 	box-sizing: border-box;
 	padding: 2em;
 	transition: -webkit-filter 0.25s;
+	cursor: move;
 
 	&.hidden {
 		-webkit-filter: blur(15px);

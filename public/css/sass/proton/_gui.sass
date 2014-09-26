@@ -1,3 +1,6 @@
+@import "compass/css3/transition"
+@import "compass/css3/images"
+
 /*
  *
  * Aqua style button
@@ -5,7 +8,6 @@
  */
 @mixin proton--aqua-button($bg,$font-color)
 	padding: 1em
-	margin: 0 0.25em
 	border-radius: 5px
 	border: 1px solid darken($bg,20%)
 	box-shadow: 0px 1px 2px -1px rgba(#000,0.6), 0px 1px 1px -1px rgba(#fff,1) inset
@@ -45,6 +47,21 @@
 	&:-ms-input-placeholder  
 		@content 
 
+.proton--reset-input
+	background: none
+	border: none
+	padding: 0
+	outline: none
+	box-shadow: none !important
+	line-height: 1em
+	vertical-align: middle
+	-webkit-appearance: none
+	margin: 0
+	font-size: inherit
+	@include proton--placeholder
+		font-family: inherit
+		outline: none
+		font-size: inherit
 
 /**
  * horizontally center a relatively positioned element

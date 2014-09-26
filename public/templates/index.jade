@@ -4,9 +4,7 @@ block head
 	link(href="css/stylesheets/main.css" type="text/css" rel="stylesheet")
 	link(href="bower_components/jqueryui/themes/base/all.css" type="text/css" rel="stylesheet")
 	script(src="bower_components/d3/d3.min.js")
-	script(src="scripts/proton.js")
-	script(src="scripts/figure.js")
-	script(src="scripts/main.js")
+	script(src="scripts/index.js")
 
 block page
 	.header-box
@@ -20,7 +18,7 @@ block page
 			h1.title.filename
 		.figure-box--info-menu.figure-box--content-box
 			.info-menu--header-fields
-				- a = ["version", "patientId", "recordId", "start", "end", "bytes", "nr", "duration", "ns", "labels", "transducer", "dimension", "physMin", "physMax", "digMin", "digMax", "prefiltering", "samples"];
+				- a = ["version", "patientId", "recordId", "starttime", "startdate", "bytes", "nr", "duration", "ns", "labels", "transducer", "dimension", "physMin", "physMax", "digMin", "digMax", "prefiltering", "samples"];
 				- for (var i=0; i < a.length; i++ ) {
 					.field(class="#{a[i]}")
 						.label
@@ -28,5 +26,34 @@ block page
 				- }		
 		.figure-box--resize-handle.ui-resizable-handle
 			.fa.fa-arrows-h
-		.d3.figure.figure-box--content-box
+		.d3.figure.figure-box--content-box(data-action="scroll-and-zoom-data-window")
+			.settings-box.content-box--tab
+				a.fa.fa-gears(data-action="open-settings") 
+					span Settings
+				.settings-menu
+					.field 
+						span start
+						input(id="window-start" type="text" name="start" placeholder="HH:MM:SS")
+					.field
+						span end
+						input(id="window-end" type="text" name="end" placeholder="HH:MM:SS")
+					.field.update(data-action="update-window")
+						span Update
+			.magic-box.content-box--tab
+				a.fa.fa-magic(data-action="open-settings")
+					span Average
+				.settings-menu
+					.field 
+						span step
+						input(id="magic-step" type="text" name="step" placeholder="(in seconds)")
+					.field
+						span offset
+						input(id="magic-offset" type="text" name="offset" placeholder="(in seconds)")
+					.field.update(data-action="update-window")
+						span Update
+
 			svg.d3#lineplot
+			.open-file-loading-anim
+				+proton--loading-anim--squares(12)
+
+

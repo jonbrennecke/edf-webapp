@@ -82,7 +82,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * inherit the parent element's size and set origin to the top, left corner
  *
  */
-/* line 26, ../sass/proton/_gui.sass */
+/* line 28, ../sass/proton/_gui.sass */
 .proton--inherit-size, .page:before, .figure-box:before {
   position: absolute;
   width: 100%;
@@ -95,6 +95,44 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * Apply @content styles in the input placeholder selector
  *
  */
+/* line 50, ../sass/proton/_gui.sass */
+.proton--reset-input, .content-box--tab.extended .settings-menu input {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  box-shadow: none !important;
+  line-height: 1em;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  margin: 0;
+  font-size: inherit;
+}
+/* line 41, ../sass/proton/_gui.sass */
+.proton--reset-input::-webkit-input-placeholder, .content-box--tab.extended .settings-menu input::-webkit-input-placeholder {
+  font-family: inherit;
+  outline: none;
+  font-size: inherit;
+}
+/* line 43, ../sass/proton/_gui.sass */
+.proton--reset-input:-moz-placeholder, .content-box--tab.extended .settings-menu input:-moz-placeholder {
+  font-family: inherit;
+  outline: none;
+  font-size: inherit;
+}
+/* line 45, ../sass/proton/_gui.sass */
+.proton--reset-input::-moz-placeholder, .content-box--tab.extended .settings-menu input::-moz-placeholder {
+  font-family: inherit;
+  outline: none;
+  font-size: inherit;
+}
+/* line 47, ../sass/proton/_gui.sass */
+.proton--reset-input:-ms-input-placeholder, .content-box--tab.extended .settings-menu input:-ms-input-placeholder {
+  font-family: inherit;
+  outline: none;
+  font-size: inherit;
+}
+
 /*
  * horizontally center a relatively positioned element
  *
@@ -111,7 +149,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * vertically and horizontally center an absolutely positioned element
  *
  */
-/* line 17, ../sass/main.scss */
+/* line 18, ../sass/main.scss */
 .page-wrap, .page {
   position: absolute;
   width: 100%;
@@ -119,17 +157,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
 }
 
-/* line 24, ../sass/main.scss */
+/* line 25, ../sass/main.scss */
 .page {
   box-sizing: border-box;
 }
-/* line 27, ../sass/main.scss */
+/* line 28, ../sass/main.scss */
 .page:before {
   content: '';
   background: #333;
 }
 
-/* line 34, ../sass/main.scss */
+/* line 35, ../sass/main.scss */
 .header-box {
   position: relative;
   float: left;
@@ -140,30 +178,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-bottom: 1px solid #000;
   z-index: 100;
 }
-/* line 44, ../sass/main.scss */
+/* line 45, ../sass/main.scss */
 .header-box .fa, .header-box h1 {
   float: left;
 }
 /* line 49, ../sass/main.scss */
+.header-box h1 {
+  display: block;
+}
+/* line 52, ../sass/main.scss */
 .header-box h1 span {
   display: block;
   font-family: "Inconsolata", sans-serif;
   padding: 1em;
   float: left;
 }
-/* line 56, ../sass/main.scss */
+/* line 59, ../sass/main.scss */
 .header-box h1:before {
   float: left;
   padding: 1em 0em 1em 1em;
 }
-/* line 61, ../sass/main.scss */
+/* line 64, ../sass/main.scss */
 .header-box h1[data-action]:hover {
   cursor: pointer;
   color: #fff;
   background: #5eb6c2;
 }
 
-/* line 69, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 .figure-box {
   position: relative;
   height: 30em;
@@ -173,25 +215,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   margin: 4em;
 }
-/* line 78, ../sass/main.scss */
+/* line 81, ../sass/main.scss */
 .figure-box:before {
   content: '';
   background: #222;
 }
 
-/* line 85, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 .figure-box--title-handle, .figure-box--content-box {
   position: relative;
   float: left;
   width: 100%;
 }
 
-/* line 91, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 .figure-box--content-box {
   height: calc(100% - 3em);
 }
 
-/* line 95, ../sass/main.scss */
+/* line 98, ../sass/main.scss */
 .figure-box--title-handle {
   padding: 1em;
   height: 3em;
@@ -204,7 +246,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
   box-sizing: border-box;
 }
-/* line 103, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 .figure-box--title-handle a {
   color: #1e494f;
   vertical-align: middle;
@@ -212,15 +254,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
   float: left;
 }
-/* line 110, ../sass/main.scss */
+/* line 113, ../sass/main.scss */
 .figure-box--title-handle a:active {
   color: #f65a49;
 }
-/* line 114, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 .figure-box--title-handle a:before {
   font-size: 1.5em;
 }
-/* line 119, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 .figure-box--title-handle h1 {
   padding-left: 1em;
   display: block;
@@ -229,7 +271,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #5eb6c2;
 }
 
-/* line 128, ../sass/main.scss */
+/* line 131, ../sass/main.scss */
 .figure-box--resize-handle {
   font-size: 1em !important;
   position: absolute;
@@ -246,28 +288,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transform: rotate(45deg);
   cursor: pointer;
 }
-/* line 142, ../sass/main.scss */
+/* line 145, ../sass/main.scss */
 .figure-box--resize-handle .fa {
   margin-top: 1.5em;
   margin-left: 0.1em;
 }
-/* line 145, ../sass/main.scss */
+/* line 148, ../sass/main.scss */
 .figure-box--resize-handle .fa:before {
   display: block;
   margin-top: -0.5em;
   font-size: 1em;
 }
 
-/* line 153, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 .figure-box--info-menu {
   display: none;
   padding: 1em;
 }
-/* line 157, ../sass/main.scss */
+/* line 160, ../sass/main.scss */
 .figure-box--info-menu.show {
   display: block;
 }
-/* line 161, ../sass/main.scss */
+/* line 164, ../sass/main.scss */
 .figure-box--info-menu .field {
   float: left;
   width: 50%;
@@ -275,35 +317,178 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding: 0.25em;
   box-sizing: border-box;
 }
-/* line 168, ../sass/main.scss */
+/* line 171, ../sass/main.scss */
 .figure-box--info-menu .field .label, .figure-box--info-menu .field .value {
   float: left;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 100;
 }
-/* line 174, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 .figure-box--info-menu .field .value {
   padding-left: 1em;
 }
 
-/* line 180, ../sass/main.scss */
+/* line 187, ../sass/main.scss */
+.magic-box {
+  top: 50%;
+}
+
+/* line 191, ../sass/main.scss */
+.settings-box {
+  top: 35%;
+}
+
+/* line 195, ../sass/main.scss */
+.content-box--tab {
+  position: absolute;
+  right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
+  border: 1px solid #000;
+  cursor: pointer;
+}
+/* line 206, ../sass/main.scss */
+.content-box--tab .settings-menu {
+  display: none;
+}
+/* line 208, ../sass/main.scss */
+.content-box--tab:hover {
+  background: #5eb6c2;
+  color: #fff;
+}
+/* line 213, ../sass/main.scss */
+.content-box--tab a.fa {
+  padding: 1em;
+}
+/* line 215, ../sass/main.scss */
+.content-box--tab a.fa span {
+  display: none;
+  color: #fff;
+  font-family: "Inconsolata", sans-serif;
+  float: left;
+}
+/* line 222, ../sass/main.scss */
+.content-box--tab.extended {
+  padding: 0.25em;
+  background: #5eb6c2;
+  color: #fff;
+  z-index: 100;
+}
+/* line 229, ../sass/main.scss */
+.content-box--tab.extended a.fa:before {
+  float: left;
+}
+/* line 230, ../sass/main.scss */
+.content-box--tab.extended a.fa span {
+  display: block;
+  padding-left: 1em;
+}
+/* line 233, ../sass/main.scss */
+.content-box--tab.extended .settings-menu {
+  display: block;
+  width: 15em;
+  background: #5eb6c2;
+}
+/* line 238, ../sass/main.scss */
+.content-box--tab.extended .settings-menu .field {
+  float: left;
+  width: 100%;
+  padding: 1em;
+  background: #333;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+/* line 247, ../sass/main.scss */
+.content-box--tab.extended .settings-menu .field.update {
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid #337d87;
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.6), 0px 1px 1px -1px white inset;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzcwYmVjOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVlYjZjMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #70bec9), color-stop(100%, #5eb6c2));
+  background: -moz-linear-gradient(#70bec9, #5eb6c2);
+  background: -webkit-linear-gradient(#70bec9, #5eb6c2);
+  background: linear-gradient(#70bec9, #5eb6c2);
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  -moz-transition: background 0.25s, box-shadow 0.25s;
+  -o-transition: background 0.25s, box-shadow 0.25s;
+  -webkit-transition: background 0.25s, box-shadow 0.25s;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+/* line 18, ../sass/proton/_gui.sass */
+.content-box--tab.extended .settings-menu .field.update:hover {
+  box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.75), 0px 1px 1px -1px white inset;
+}
+/* line 20, ../sass/proton/_gui.sass */
+.content-box--tab.extended .settings-menu .field.update:active {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVlYjZjMiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzcwYmVjOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5eb6c2), color-stop(100%, #70bec9));
+  background: -moz-linear-gradient(#5eb6c2, #70bec9);
+  background: -webkit-linear-gradient(#5eb6c2, #70bec9);
+  background: linear-gradient(#5eb6c2, #70bec9);
+}
+/* line 249, ../sass/main.scss */
+.content-box--tab.extended .settings-menu .field.update span {
+  width: 100%;
+  text-align: center;
+}
+/* line 253, ../sass/main.scss */
+.content-box--tab.extended .settings-menu span {
+  float: left;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 12pt;
+  line-height: 1em;
+  vertical-align: middle;
+}
+/* line 261, ../sass/main.scss */
+.content-box--tab.extended .settings-menu input {
+  font-family: "Inconsolata", sans-serif;
+  color: #fff;
+  float: left;
+  padding-left: 1em;
+  width: 7em;
+}
+/* line 41, ../sass/proton/_gui.sass */
+.content-box--tab.extended .settings-menu input::-webkit-input-placeholder {
+  color: #aaa;
+}
+/* line 43, ../sass/proton/_gui.sass */
+.content-box--tab.extended .settings-menu input:-moz-placeholder {
+  color: #aaa;
+}
+/* line 45, ../sass/proton/_gui.sass */
+.content-box--tab.extended .settings-menu input::-moz-placeholder {
+  color: #aaa;
+}
+/* line 47, ../sass/proton/_gui.sass */
+.content-box--tab.extended .settings-menu input:-ms-input-placeholder {
+  color: #aaa;
+}
+
+/* line 288, ../sass/main.scss */
 .figure {
   box-sizing: border-box;
   padding: 2em;
   transition: -webkit-filter 0.25s;
+  cursor: move;
 }
-/* line 185, ../sass/main.scss */
+/* line 294, ../sass/main.scss */
 .figure.hidden {
   -webkit-filter: blur(15px);
 }
 
-/* line 192, ../sass/main.scss */
+/* line 301, ../sass/main.scss */
 .axis path, .axis line {
   fill: none;
   stroke: #5eb6c2;
   shape-rendering: crispEdges;
 }
-/* line 198, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 .axis text {
   font-family: "Inconsolata", sans-serif;
   font-weight: lighter;
@@ -311,20 +496,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   fill: #5eb6c2;
 }
 
-/* line 206, ../sass/main.scss */
+/* line 315, ../sass/main.scss */
 .line-plot {
   fill: none;
   stroke-width: 1;
   stroke: #5eb6c2;
 }
 
-/* line 212, ../sass/main.scss */
+/* line 321, ../sass/main.scss */
 .area-plot {
   stroke-width: 0;
   fill: rgba(94, 182, 194, 0.5);
 }
 
-/* line 217, ../sass/main.scss */
+/* line 326, ../sass/main.scss */
 .tick {
   stroke-dasharray: 1, 2;
 }

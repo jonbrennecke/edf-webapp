@@ -1,0 +1,14 @@
+mixin proton--cube
+	//- - for (var i=0;i<9;i++){
+	.proton--cube
+		- for (var i=0;i<6;i++){
+			.side
+		- }
+
+	//- - }
+
+mixin proton--loading-anim--squares(n)
+	.proton--loading-anim--squares
+		- for (var i=0;i<(n*n);i++){
+			.proton--loading-anim--square
+		- }

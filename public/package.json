@@ -1,0 +1,13 @@
+{
+	"name": "edf-webapp",
+	"description" : "NW requires a 'package.json' telling it which files to run.",
+	"main": "./index.html",
+	"window" : {
+		"title" : "EDF WebApp",
+		"icon" : "",
+		"toolbar" : true,
+		"frame" : true,
+		"width" : 640,
+		"height" : 480
+	}
+}

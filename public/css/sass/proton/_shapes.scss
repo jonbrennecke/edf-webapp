@@ -1,0 +1,52 @@
+@import "class";
+@import "compass/css3/transform";
+
+// 
+// Cube ***************************************************
+// 
+$Cube: class((
+
+));
+
+
+// rotateY(0deg)
+// rotateY(90deg)
+
+// 
+// calculate the transform property
+// 
+// :param $n - 
+// 
+@function Cube-transform($this,$i) {
+	@return rotateY($i*90deg) translate();
+}
+$Cube: def-method($Cube,"transform",Cube-transform);
+
+@mixin cube(){
+	$cube: new($Cube);
+
+
+	@for $i from 1 through 6 {
+		.side {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background: red;
+
+			&:nth-of-type(#{$i}){
+				@include transform(call-method($cube,"transform",($i)));
+			}
+		}
+	}
+}
+
+
+.proton--cube {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// @include perspective(500px);
+	// @include cube;
+}
