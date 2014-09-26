@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "jon:edf-webapp"
+    "url": "http://github.com/jonbrennecke/edf-webapp"
   },
   "author": "",
   "license": "ISC"

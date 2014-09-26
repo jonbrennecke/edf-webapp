@@ -4,6 +4,8 @@
 // install script //////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 
+// TODO stat 
+
 // because of a bug in Nodewebkit 0.8.6
 // we need to rename node_modules/nodewebkit/package.json to 
 // node_modules/nodewebkit/_package.json
@@ -20,8 +22,6 @@ var spawn = require('child_process').spawn;
 
 // install edflib
 process.chdir( __dirname+'/public/' );
-
-// process.chdir( __dirname+'/public/node_modules/edflib/' );
 
 var npm = spawn( 'npm', [ 'install' ]);
 
