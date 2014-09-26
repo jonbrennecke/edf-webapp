@@ -2,6 +2,10 @@
 	"name": "edf-webapp",
 	"description" : "NW requires a 'package.json' telling it which files to run.",
 	"main": "./index.html",
+	"dependencies" : {
+		"edflib" : "*",
+		"node-linalg" : "*"
+	},
 	"window" : {
 		"title" : "EDF WebApp",
 		"icon" : "",
