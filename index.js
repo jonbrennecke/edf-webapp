@@ -2,7 +2,7 @@
 
 	// locate and start Node Webkit
 
-	var spawn = require('child_process').spawn;
+	var spawn = require('child_process').spawn,
 		// findpath = require('nodewebkit').findpath;  // TODO only works in NW >=10.0
 		// nwpath = findpath(),
 		nwpath = './node_modules/nodewebkit/bin/nodewebkit',

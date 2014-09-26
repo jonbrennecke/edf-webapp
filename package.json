@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "description": "a miniscule webapp for viewing edf files",
   "dependencies": {
-    "version": "*"
+    "nodewebkit": "0.8.6"
   },
   "main" : "./public/index.html",
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "install" : "node install.js"
   },
   "repository": {
     "type": "git",
