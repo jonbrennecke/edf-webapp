@@ -6,9 +6,12 @@
 
 var spawn = require('child_process').spawn;
 
-// install edflib
-
 process.chdir( __dirname+'/public/node_modules/edflib/' );
+
+// install edflib
+process.chdir( __dirname+'/public/' );
+
+// process.chdir( __dirname+'/public/node_modules/edflib/' );
 
 var npm = spawn( 'npm', [ 'install' ]);
 
